@@ -44,3 +44,5 @@ func myfun1(a string, b string) {
 	fullname = a + " " + b
 	println(fullname)
 }
+
+//Passing argument and returns function call
