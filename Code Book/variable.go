@@ -11,10 +11,11 @@ func main() {
 	fmt.Println("I am revolving - ")
 
 	var enum int8
+	var combinedName string
 
 	for i := 0; i < 129; i++ {
 		enum += 1
-		//fmt.Println(enum)
+		fmt.Println(enum)
 	}
 
 	//Call function
@@ -23,10 +24,21 @@ func main() {
 	//call function
 	myfun1("ansuman", "padhy")
 	fmt.Println(enum)
+
+	//call function
+	combinedName = myfun2("IBM", "INDIA")
+	fmt.Println(combinedName)
+
+	//call function
+	combinedName, err := myfun3("IBM", "INDIA")
+	fmt.Println(combinedName)
+	if err != nil {
+		fmt.Println(combinedName)
+	}
+	fmt.Println("I don't have any value from myfun3")
 }
 
 //No Argument and No returns function call
-
 func myfun() {
 	println("I am myfun block")
 
@@ -46,3 +58,17 @@ func myfun1(a string, b string) {
 }
 
 //Passing argument and returns function call
+func myfun2(a string, b string) string {
+	var fullname string
+	fullname = a + " " + b
+	println("Am I retruning?")
+	return fullname
+}
+
+//Passing argument and returns function call
+func myfun3(a string, b string) (string, error) {
+	var fullname string
+	fullname = a + " " + b
+	println("Am I retruning?")
+	return fullname, nil
+}
